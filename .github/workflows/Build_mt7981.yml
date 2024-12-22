@@ -151,7 +151,7 @@ jobs:
         echo "## hanwckf's ImmortalWrt mt7981 Release $(date +"%Y.%m.%d-%H:%M")" >> release.txt
         echo "- squashfs-sysupgrade.bin" >> release.txt
         echo "  Cudy-tr3000-mod-md5: $(md5sum ${{ env.FIRMWARE }}/*360-t7*sysupgrade.bin | cut -d" " -f1)" >> release.txt
-        echo "  Cudy-tr3000-mod-sha256: $(grep ".*360-t7.*sysupgrade.bin" ${{ env.FIRMWARE }}/sha256sums | grep -oE "\w{64}")" >> release.txt
+        echo "  Cudy-tr3000-mod-sha256: $(grep ".*tr3000.*sysupgrade.bin" ${{ env.FIRMWARE }}/sha256sums | grep -oE "\w{64}")" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
         mv ImmortalWrt/.config ImmortalWrt/build.config
 
